@@ -14,7 +14,6 @@ import { Event } from '../models/index';
 export const createEvent = catchAsync(async (body, files) => {
   const { name, location, date, time, url } = body;
   const coverImage = files;
-  console.log(coverImage.length);
   if (!name || !location || !date || !time || !url || coverImage.length === 0) {
     return {
       type: 'Error',
@@ -56,6 +55,13 @@ export const createEvent = catchAsync(async (body, files) => {
 export const getEvent = catchAsync(async (id) => {
   const event = await Event.findOne({ _id: id });
 
+  if (!event) {
+    return {
+      type: 'Error',
+      message: 'noEventFound',
+      statusCode: 404
+    };
+  }
   return {
     type: 'Success',
     message: 'successfulFound',
@@ -80,6 +86,14 @@ export const getAllEvent = catchAsync(async (filter) => {
     query.date = filter.date;
   }
   const event = await Event.find(query);
+
+  if (!event) {
+    return {
+      type: 'Error',
+      message: 'noEventsFound',
+      statusCode: 404
+    };
+  }
 
   return {
     type: 'Success',

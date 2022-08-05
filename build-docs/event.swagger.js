@@ -1,18 +1,22 @@
-export const getAllEvent = {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.updateEventCoverImage = exports.updateEvent = exports.getEvent = exports.getAllEvent = exports.deleteEvent = exports.createEvent = void 0;
+const getAllEvent = {
   security: {
     jwt: []
   },
   tags: ['Event'],
   description: 'This route allow to get all events',
   opeationId: 'getAllEvent',
-  parameters: [
-    {
-      in: 'header',
-      name: 'Accept-Language',
-      type: 'string',
-      example: 'en_MX'
-    }
-  ],
+  parameters: [{
+    in: 'header',
+    name: 'Accept-Language',
+    type: 'string',
+    example: 'en_MX'
+  }],
   responses: {
     200: {
       description: 'Get All Events',
@@ -60,13 +64,11 @@ export const getAllEvent = {
                     },
                     image: {
                       type: 'string',
-                      example:
-                        'https://res.cloudinary.com/dknma8cck/image/upload/v1629411601/EcommerceAPI/Category/Makeup/wnxfwht979aao486afll.webp'
+                      example: 'https://res.cloudinary.com/dknma8cck/image/upload/v1629411601/EcommerceAPI/Category/Makeup/wnxfwht979aao486afll.webp'
                     },
                     imageCoverId: {
                       type: 'string',
-                      example:
-                        'EcommerceAPI/Category/Makeup/wnxfwht979aao486afll'
+                      example: 'EcommerceAPI/Category/Makeup/wnxfwht979aao486afll'
                     },
                     createdAt: {
                       type: 'string',
@@ -106,28 +108,25 @@ export const getAllEvent = {
     }
   }
 };
-
-export const getEvent = {
+exports.getAllEvent = getAllEvent;
+const getEvent = {
   security: {
     jwt: []
   },
   tags: ['Event'],
   description: "This route allow to get event using it's ID",
   opeationId: 'getEvent',
-  parameters: [
-    {
-      in: 'header',
-      name: 'Accept-Language',
-      type: 'string',
-      example: 'en_MX'
-    },
-    {
-      in: 'path',
-      name: 'id',
-      type: 'string',
-      description: 'Event ID'
-    }
-  ],
+  parameters: [{
+    in: 'header',
+    name: 'Accept-Language',
+    type: 'string',
+    example: 'en_MX'
+  }, {
+    in: 'path',
+    name: 'id',
+    type: 'string',
+    description: 'Event ID'
+  }],
   responses: {
     200: {
       description: "Get event using it's ID",
@@ -175,13 +174,11 @@ export const getEvent = {
                     },
                     image: {
                       type: 'string',
-                      example:
-                        'https://res.cloudinary.com/dknma8cck/image/upload/v1629411601/EcommerceAPI/Category/Makeup/wnxfwht979aao486afll.webp'
+                      example: 'https://res.cloudinary.com/dknma8cck/image/upload/v1629411601/EcommerceAPI/Category/Makeup/wnxfwht979aao486afll.webp'
                     },
                     imageCoverId: {
                       type: 'string',
-                      example:
-                        'EcommerceAPI/Category/Makeup/wnxfwht979aao486afll'
+                      example: 'EcommerceAPI/Category/Makeup/wnxfwht979aao486afll'
                     },
                     createdAt: {
                       type: 'string',
@@ -221,19 +218,17 @@ export const getEvent = {
     }
   }
 };
-
-export const createEvent = {
+exports.getEvent = getEvent;
+const createEvent = {
   tags: ['Event'],
   description: 'This route allow only admin to create new event',
   opeationId: 'createEvent',
-  parameters: [
-    {
-      in: 'header',
-      name: 'Accept-Language',
-      type: 'string',
-      example: 'ar_MX'
-    }
-  ],
+  parameters: [{
+    in: 'header',
+    name: 'Accept-Language',
+    type: 'string',
+    example: 'ar_MX'
+  }],
   requestBody: {
     required: true,
     content: {
@@ -318,13 +313,11 @@ export const createEvent = {
                     },
                     image: {
                       type: 'string',
-                      example:
-                        'https://res.cloudinary.com/dknma8cck/image/upload/v1629411601/EcommerceAPI/Category/Makeup/wnxfwht979aao486afll.webp'
+                      example: 'https://res.cloudinary.com/dknma8cck/image/upload/v1629411601/EcommerceAPI/Category/Makeup/wnxfwht979aao486afll.webp'
                     },
                     imageCoverId: {
                       type: 'string',
-                      example:
-                        'EcommerceAPI/Category/Makeup/wnxfwht979aao486afll'
+                      example: 'EcommerceAPI/Category/Makeup/wnxfwht979aao486afll'
                     },
                     createdAt: {
                       type: 'string',
@@ -364,26 +357,22 @@ export const createEvent = {
     }
   }
 };
-
-export const updateEvent = {
+exports.createEvent = createEvent;
+const updateEvent = {
   tags: ['Event'],
-  description:
-    'This route allow only admin to update event details [name / location]',
+  description: 'This route allow only admin to update event details [name / location]',
   opeationId: 'updateEventDetails',
-  parameters: [
-    {
-      in: 'header',
-      name: 'Accept-Language',
-      type: 'string',
-      example: 'ar_MX'
-    },
-    {
-      in: 'path',
-      name: 'id',
-      type: 'integer',
-      description: 'Event ID'
-    }
-  ],
+  parameters: [{
+    in: 'header',
+    name: 'Accept-Language',
+    type: 'string',
+    example: 'ar_MX'
+  }, {
+    in: 'path',
+    name: 'id',
+    type: 'integer',
+    description: 'Event ID'
+  }],
   requestBody: {
     required: true,
     content: {
@@ -482,26 +471,22 @@ export const updateEvent = {
     }
   }
 };
-
-export const updateEventCoverImage = {
+exports.updateEvent = updateEvent;
+const updateEventCoverImage = {
   tags: ['Event'],
-  description:
-    'This route allow only admin to update event cover image [image]',
+  description: 'This route allow only admin to update event cover image [image]',
   opeationId: 'updateEventImage',
-  parameters: [
-    {
-      in: 'header',
-      name: 'Accept-Language',
-      type: 'string',
-      example: 'ar_MX'
-    },
-    {
-      in: 'path',
-      name: 'id',
-      type: 'integer',
-      description: 'Event ID'
-    }
-  ],
+  parameters: [{
+    in: 'header',
+    name: 'Accept-Language',
+    type: 'string',
+    example: 'ar_MX'
+  }, {
+    in: 'path',
+    name: 'id',
+    type: 'integer',
+    description: 'Event ID'
+  }],
   requestBody: {
     required: true,
     content: {
@@ -565,13 +550,11 @@ export const updateEventCoverImage = {
                     },
                     image: {
                       type: 'string',
-                      example:
-                        'https://res.cloudinary.com/dknma8cck/image/upload/v1629411601/EcommerceAPI/Category/Makeup/wnxfwht979aao486afll.webp'
+                      example: 'https://res.cloudinary.com/dknma8cck/image/upload/v1629411601/EcommerceAPI/Category/Makeup/wnxfwht979aao486afll.webp'
                     },
                     imageCoverId: {
                       type: 'string',
-                      example:
-                        'EcommerceAPI/Category/Makeup/wnxfwht979aao486afll'
+                      example: 'EcommerceAPI/Category/Makeup/wnxfwht979aao486afll'
                     },
                     createdAt: {
                       type: 'string',
@@ -631,25 +614,22 @@ export const updateEventCoverImage = {
     }
   }
 };
-
-export const deleteEvent = {
+exports.updateEventCoverImage = updateEventCoverImage;
+const deleteEvent = {
   tags: ['Event'],
   description: 'This route allow only admin to delete the event',
   opeationId: 'deleteEvent',
-  parameters: [
-    {
-      in: 'header',
-      name: 'Accept-Language',
-      type: 'string',
-      example: 'en_MX'
-    },
-    {
-      in: 'path',
-      name: 'id',
-      type: 'integer',
-      description: 'Event ID'
-    }
-  ],
+  parameters: [{
+    in: 'header',
+    name: 'Accept-Language',
+    type: 'string',
+    example: 'en_MX'
+  }, {
+    in: 'path',
+    name: 'id',
+    type: 'integer',
+    description: 'Event ID'
+  }],
   responses: {
     200: {
       description: 'Delete event',
@@ -693,3 +673,4 @@ export const deleteEvent = {
     }
   }
 };
+exports.deleteEvent = deleteEvent;

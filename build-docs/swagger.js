@@ -9,6 +9,14 @@ var _auth = require("./auth.swagger");
 
 var _category = require("./category.swagger");
 
+var _event = require("./event.swagger");
+
+var _ads = require("./ads.swagger");
+
+var _genre = require("./genre.swagger");
+
+var _faq = require("./faq.swagger");
+
 var _product = require("./product.swagger");
 
 var _cart = require("./cart.swagger");
@@ -105,6 +113,47 @@ const docs = {
     },
     '/category/{categoryId}/image': {
       patch: _category.updateCategoryImage
+    },
+    '/event': {
+      get: _event.getAllEvent,
+      post: _event.createEvent
+    },
+    '/event/{id}': {
+      get: _event.getEvent,
+      patch: _event.updateEvent,
+      delete: _event.deleteEvent
+    },
+    '/event/{eventId}/cover-image': {
+      patch: _event.updateEventCoverImage
+    },
+    '/genre': {
+      get: _genre.getAllGenre,
+      post: _genre.createGenre
+    },
+    '/genre/{id}': {
+      get: _genre.getGenre,
+      patch: _genre.updateGenre,
+      delete: _genre.deleteGenre
+    },
+    '/faq': {
+      get: _faq.getAllFaq,
+      post: _faq.addFaq
+    },
+    '/ads': {
+      get: _faq.getAdsByAdmin,
+      post: _ads.addAds
+    },
+    '/ads/get': {
+      get: _ads.getAds
+    },
+    '/ads/{id}': {
+      patch: _ads.updateAds,
+      delete: _ads.deleteAds
+    },
+    '/faq/{id}': {
+      get: _faq.getFaq,
+      patch: _faq.updateFaq,
+      delete: _faq.deleteFaq
     },
     '/product': {
       get: _product.getAllProducts,

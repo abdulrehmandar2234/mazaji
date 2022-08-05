@@ -18,6 +18,34 @@ import {
 } from './category.swagger';
 
 import {
+  getAllEvent,
+  getEvent,
+  createEvent,
+  updateEvent,
+  updateEventCoverImage,
+  deleteEvent
+} from './event.swagger';
+
+import { getAds, addAds, updateAds, deleteAds } from './ads.swagger';
+
+import {
+  getAllGenre,
+  getGenre,
+  createGenre,
+  updateGenre,
+  deleteGenre
+} from './genre.swagger';
+
+import {
+  getAllFaq,
+  getFaq,
+  getAdsByAdmin,
+  addFaq,
+  updateFaq,
+  deleteFaq
+} from './faq.swagger';
+
+import {
   getAllProducts,
   getProduct,
   addProduct,
@@ -171,6 +199,47 @@ const docs = {
     },
     '/category/{categoryId}/image': {
       patch: updateCategoryImage
+    },
+    '/event': {
+      get: getAllEvent,
+      post: createEvent
+    },
+    '/event/{id}': {
+      get: getEvent,
+      patch: updateEvent,
+      delete: deleteEvent
+    },
+    '/event/{eventId}/cover-image': {
+      patch: updateEventCoverImage
+    },
+    '/genre': {
+      get: getAllGenre,
+      post: createGenre
+    },
+    '/genre/{id}': {
+      get: getGenre,
+      patch: updateGenre,
+      delete: deleteGenre
+    },
+    '/faq': {
+      get: getAllFaq,
+      post: addFaq
+    },
+    '/ads': {
+      get: getAdsByAdmin,
+      post: addAds
+    },
+    '/ads/get': {
+      get: getAds
+    },
+    '/ads/{id}': {
+      patch: updateAds,
+      delete: deleteAds
+    },
+    '/faq/{id}': {
+      get: getFaq,
+      patch: updateFaq,
+      delete: deleteFaq
     },
     '/product': {
       get: getAllProducts,

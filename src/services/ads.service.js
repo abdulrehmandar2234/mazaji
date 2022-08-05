@@ -47,7 +47,7 @@ export const addAds = catchAsync(async (data, file, thumbnail) => {
     600
   );
 
-  const videoFolderName = `AdsVideos/${(name.trim().split(' ').join(''))}`;
+  const videoFolderName = `AdsVideos/${name.trim().split(' ').join('')}`;
 
   const video = await uploadVideo(
     dataUri(file, '.mp4').content,
@@ -135,8 +135,8 @@ export const deleteAds = catchAsync(async (id) => {
 /**
  * @desc    Ads watched by Users
  * @param   { String } id - Ads ID,
- * @param   { String } userId - User ID, 
- * @param   { Object } data - Body data object, 
+ * @param   { String } userId - User ID,
+ * @param   { Object } data - Body data object,
  * @returns { Object<type|message|statusCode> }
  */
 export const watchads = catchAsync(async (id, userId, data) => {
