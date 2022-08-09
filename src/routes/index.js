@@ -14,6 +14,7 @@ import faqRoute from './faqs.route';
 import archiveRoute from './archive.route';
 import adsRouter from './ads.route';
 import eventRoute from './event.route';
+import templateRoute from './template.route';
 
 const router = express.Router();
 
@@ -31,5 +32,6 @@ router.use('/faq', faqRoute);
 router.use('/archive', archiveRoute);
 router.use('/ads', adsRouter);
 router.use('/event', eventRoute);
+router.use('/template', templateRoute);
 
 export default router;

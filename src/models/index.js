@@ -16,6 +16,7 @@ import Archive from './archive.model';
 import ArchiveList from './archiveList.model';
 import Ads from './ads.model';
 import Event from './event.model';
+import Template from './template.model';
 
 export {
   User,
@@ -35,5 +36,6 @@ export {
   Archive,
   ArchiveList,
   Ads,
-  Event
+  Event,
+  Template
 };

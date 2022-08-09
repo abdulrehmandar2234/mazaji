@@ -23,6 +23,8 @@ export const messages = {
     noProductsFound: 'No products found.',
     noEventsFound: 'No events found.',
     noEventFound: 'No event found with this ID.',
+    noTemplateFound: 'No template found with this ID.',
+    noTemplatesFound: 'No templates found.',
     invalidRequest: 'Invalid request.',
     noCartForUser: 'No cart found for user with this email.',
     noCartFound: 'No cart found.',

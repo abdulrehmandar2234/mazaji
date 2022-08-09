@@ -98,6 +98,14 @@ import {
 } from './genre.controller';
 
 import {
+  createTemplate,
+  getAllTemplates,
+  getTemplate,
+  updateTemplate,
+  deleteTemplate
+} from './template.controller';
+
+import {
   createMusic,
   getAllMusic,
   getMusic,
@@ -242,6 +250,14 @@ const genreController = {
   deleteGenre
 };
 
+const templateController = {
+  createTemplate,
+  getAllTemplates,
+  getTemplate,
+  updateTemplate,
+  deleteTemplate
+};
+
 const musicController = {
   createMusic,
   getAllMusic,
@@ -302,5 +318,6 @@ export {
   faqController,
   archiveController,
   adsController,
-  eventController
+  eventController,
+  templateController
 };

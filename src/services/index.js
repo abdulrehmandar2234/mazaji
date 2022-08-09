@@ -93,6 +93,14 @@ import {
 } from './genre.service';
 
 import {
+  createTemplate,
+  getAllTemplates,
+  getTemplate,
+  deleteTemplate,
+  updateTemplate
+} from './template.service';
+
+import {
   addMusic,
   getAllMusic,
   getMusic,
@@ -230,6 +238,14 @@ const GenreService = {
   deleteGenre
 };
 
+const templateService = {
+  createTemplate,
+  getAllTemplates,
+  getTemplate,
+  deleteTemplate,
+  updateTemplate
+};
+
 const musicService = {
   addMusic,
   getAllMusic,
@@ -289,5 +305,6 @@ export {
   musicService,
   faqService,
   archiveService,
-  adsService
+  adsService,
+  templateService
 };
