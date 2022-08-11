@@ -14,7 +14,7 @@ import AppError from './appError';
  * @param   { String } text - Mail body
  * @returns { Promise }
  */
-const sendEmail = catchAsync(async (to, subject, text) => {
+export const sendEmail = catchAsync(async (to, subject, text) => {
   try {
     // Create the email envelope (transport)
     const transport = createTransport({

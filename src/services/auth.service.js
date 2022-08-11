@@ -7,7 +7,8 @@ import dataUri from '../utils/datauri';
 import { uploadFile } from '../utils/cloudinary';
 import {
   sendVerificationEmail,
-  sendAfterResetPasswordMessage
+  sendAfterResetPasswordMessage,
+  sendEmail
 } from '../utils/sendEmail';
 
 // Middlewares
@@ -18,7 +19,7 @@ import {
 } from '../middlewares/token';
 
 // Models
-import { User, Token } from '../models/index';
+import { User, Token, Template } from '../models/index';
 
 /**
  * @desc    Sign Up Service
@@ -90,6 +91,9 @@ export const signup = catchAsync(async (body) => {
     type: false
   });
 
+  const template = Template.findOne({ type: 'Registration' });
+
+  await sendEmail(email, 'Registered Successfully', template.description);
   // 8) Generate tokens (access token & refresh token)
   const tokens = await generateAuthTokens(user);
 
